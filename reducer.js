@@ -1,15 +1,20 @@
-let ADD_CONTACT = 'ADD_CONTACT'
-let REMOVE_CONTACT = 'REMOVE_CONTACT'
+import {
+    ADD_CONTACT,
+REMOVE_CONTACT 
+}
+from './actions'
 
 // Write your code below this line!
 let initialState = 
 const reducer = (store, action) => {
   switch (action.type) {
     case ADD_CONTACT:
-      return store, {counter: store.counter + 1});
+     let new_contact = action.payload
+      return store, [...state, new_contact]
     case REMOVE_CONTACT:
-      return store, {counter: store.counter - 1});
-    default:
+      let theSelectedId = action.payload
+       return state.filter(contact => contact.id != Number(theSelectedId)
+          default:
       return store;
   }
  }
